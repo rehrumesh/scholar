@@ -22,8 +22,14 @@ public class User {
 	@Column(name="lastName")
 	private String lastName;
 	
+	@Column(name="email")
+	private String email;
+	
 	@Column(name="userType")
 	private String userType;
+	
+	@Column(name="organization")
+	private String organization;
 	
 	public Integer getId() {
 		return id;
@@ -43,10 +49,22 @@ public class User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getUserType() {
 		return userType;
 	}
 	public void setUserType(String userType) {
 		this.userType = userType;
+	}
+	public String getOrganization() {
+		return organization;
+	}
+	public void setOrganization(String organization) {
+		this.organization = organization;
 	}
 }
