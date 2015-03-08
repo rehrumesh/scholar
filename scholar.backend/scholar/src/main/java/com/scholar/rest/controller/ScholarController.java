@@ -12,17 +12,17 @@ import com.scholar.rest.model.Task;
 import com.scholar.rest.service.ScholarService;
 
 @RestController
-@RequestMapping(value="/scholar")
+@RequestMapping(value = "/scholar")
 public class ScholarController {
-	
+
 	@Autowired
 	ScholarService scholarService;
-	
-	@RequestMapping(value="/taskslist/{scholarId}", method=RequestMethod.GET)
-	public List<Task> getTaskBySchoarId(@PathVariable("scholarId") int scholarId){
+
+	@RequestMapping(value = "/taskslist/{scholarId}", method = RequestMethod.GET)
+	public List<Task> getTaskBySchoarId(@PathVariable("scholarId") int scholarId) {
 		List<Task> tasks = null;
 		try {
-			tasks = scholarService.getTasksByScholarId(scholarId);
+			tasks = scholarService.getTasksListByScholarId(scholarId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

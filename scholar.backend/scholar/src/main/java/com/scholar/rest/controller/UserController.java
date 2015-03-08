@@ -20,7 +20,7 @@ public class UserController {
 
 	@Autowired
 	UserService userService;
-	
+
 	static final Logger logger = Logger.getLogger(UserController.class);
 
 	/* Create a new recode */
@@ -54,25 +54,25 @@ public class UserController {
 	public User getUserById(@PathVariable("id") int userId) {
 		User user = null;
 		try {
-			user = userService.getUserById(userId);
+			user = userService.getUserByUserId(userId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return user;
 	}
-	
+
 	/* Update a user information */
-	@RequestMapping(value="/update", method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
-	public void updateUser(@RequestBody User user){
+	@RequestMapping(value = "/update", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void updateUser(@RequestBody User user) {
 		try {
 			userService.updateUser(user);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/* Delete a user by userID */
-	@RequestMapping(value = "/delete/{userId}", method=RequestMethod.GET)
+	@RequestMapping(value = "/delete/{userId}", method = RequestMethod.GET)
 	public void deleteUser(@PathVariable("userId") int userId) {
 		try {
 			userService.deleteUser(userId);

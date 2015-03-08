@@ -22,7 +22,7 @@ public class DonorController {
 	public List<Task> getAllTasks(@PathVariable("userId") int userId) {
 		List<Task> tasks = null;
 		try {
-			tasks = donorService.getAllTasks(userId);
+			tasks = donorService.getAllTasksByDonorId(userId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
