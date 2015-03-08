@@ -26,6 +26,8 @@
 			<list>
 				<value>com.scholar.rest.model.User</value>
 				<value>com.scholar.rest.model.Task</value>
+				<value>com.scholar.rest.model.Scholarship</value>
+				<value>com.scholar.rest.model.Request</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -44,9 +46,11 @@
 	<bean id="persistenceExceptionTranslationPostProcessor"
 		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
-	<bean id="userDao" class="com.scholar.rest.dao.UserDaoImpl"></bean>
-	<bean id="userService" class="com.scholar.rest.service.UserServiceImpl"></bean>
-	<bean id="taskDao" class="com.scholar.rest.dao.TaskDaoImpl"></bean>
-	<bean id="donorService" class="com.scholar.rest.service.DonorServiceImpl"></bean>
-	<bean id="scholarService" class="com.scholar.rest.service.ScholarServiceImpl"></bean>
+	<bean id="userDao" class="com.scholar.rest.daoImpl.UserDaoImpl"></bean>
+	<bean id="taskDao" class="com.scholar.rest.daoImpl.TaskDaoImpl"></bean>
+	<bean id="requestDao" class="com.scholar.rest.daoImpl.RequestDaoImpl"></bean>
+	<bean id="scholarshipDao" class="com.scholar.rest.daoImpl.ScholarshipDaoImpl"></bean>
+	<bean id="userService" class="com.scholar.rest.serviceImpl.UserServiceImpl"></bean>
+	<bean id="donorService" class="com.scholar.rest.serviceImpl.DonorServiceImpl"></bean>
+	<bean id="scholarService" class="com.scholar.rest.serviceImpl.ScholarServiceImpl"></bean>
 </beans>
