@@ -9,7 +9,7 @@ public interface UserService {
 
 	public List<User> getUsersList() throws Exception;
 
-	public User getUserById(int userId) throws Exception;
+	public User getUserByUserId(int userId) throws Exception;
 	
 	public void updateUser(User user) throws Exception;
 

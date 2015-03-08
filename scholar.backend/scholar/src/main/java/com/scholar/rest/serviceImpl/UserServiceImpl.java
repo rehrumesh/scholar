@@ -1,4 +1,4 @@
-package com.scholar.rest.service;
+package com.scholar.rest.serviceImpl;
 
 import java.util.List;
 
@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.scholar.rest.dao.UserDao;
 import com.scholar.rest.model.User;
+import com.scholar.rest.service.UserService;
 
 public class UserServiceImpl implements UserService {
 
@@ -20,7 +21,7 @@ public class UserServiceImpl implements UserService {
 		return userDao.getUsersList();
 	}
 
-	public User getUserById(int userId) throws Exception {
+	public User getUserByUserId(int userId) throws Exception {
 		return userDao.getUserById(userId);
 	}
 

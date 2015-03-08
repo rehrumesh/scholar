@@ -5,5 +5,5 @@ import java.util.List;
 import com.scholar.rest.model.Task;
 
 public interface DonorService {
-	public List<Task> getAllTasks(int userId);
+	public List<Task> getAllTasksByDonorId(int donorId) throws Exception;
 }
