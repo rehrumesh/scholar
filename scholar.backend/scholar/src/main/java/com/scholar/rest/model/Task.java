@@ -11,64 +11,98 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="task")
+@Table(name = "task")
 public class Task {
-	
+
 	@Id
 	@GeneratedValue
-	@Column(name="taskId")
+	@Column(name = "taskId")
 	private int taskId;
-	
-	@Column(name="description")
+
+	@Column(name = "description")
 	private String description;
-	
+
+	@Column(name = "requestId")
+	private int requestId;
+
+	@Column(name = "scholarshipId")
+	private int scholarshipId;
+
+	@Column(name = "proveLink")
+	private String proveLink;
+
 	@Temporal(TemporalType.DATE)
-	@Column(name="date")
-	private Date date;
-	
-	@Column(name="assignedBy")
-	private int assignedBy;
-	
-	@Column(name="assignedTo")
-	private int assignedTo;
-	
-	@Column(name="completedOrNot")
-	private String completedOrNo;
-	
+	@Column(name = "proofAddedDate")
+	private Date proofAddedDate;
+
+	@Column(name = "isApproved")
+	private boolean isApproved;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "approvedDate")
+	private Date approvedDate;
+
 	public int getTaskId() {
 		return taskId;
 	}
+
 	public void setTaskId(int taskId) {
 		this.taskId = taskId;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Date getDate() {
-		return date;
+
+	public int getRequestId() {
+		return requestId;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+
+	public void setRequestId(int requestId) {
+		this.requestId = requestId;
 	}
-	public int getAssignedBy() {
-		return assignedBy;
+
+	public int getScholarshipId() {
+		return scholarshipId;
 	}
-	public void setAssignedBy(int assignedBy) {
-		this.assignedBy = assignedBy;
+
+	public void setScholarshipId(int scholarshipId) {
+		this.scholarshipId = scholarshipId;
 	}
-	public int getAssignedTo() {
-		return assignedTo;
+
+	public String getProveLink() {
+		return proveLink;
 	}
-	public void setAssignedTo(int assignedTo) {
-		this.assignedTo = assignedTo;
+
+	public void setProveLink(String proveLink) {
+		this.proveLink = proveLink;
 	}
-	public String getCompletedOrNo() {
-		return completedOrNo;
+
+	public Date getProofAddedDate() {
+		return proofAddedDate;
 	}
-	public void setCompletedOrNo(String completedOrNo) {
-		this.completedOrNo = completedOrNo;
+
+	public void setProofAddedDate(Date proofAddedDate) {
+		this.proofAddedDate = proofAddedDate;
+	}
+
+	public boolean isApproved() {
+		return isApproved;
+	}
+
+	public void setApproved(boolean isApproved) {
+		this.isApproved = isApproved;
+	}
+
+	public Date getApprovedDate() {
+		return approvedDate;
+	}
+
+	public void setApprovedDate(Date approvedDate) {
+		this.approvedDate = approvedDate;
 	}
 }
