@@ -5,7 +5,9 @@ import java.util.List;
 import com.scholar.rest.model.Task;
 
 public interface TaskDao {
-	public List<Task> getTasksByDonorId(int donorId);
+	public void addTask(Task task);
 
-	public List<Task> getTasksByScholarId(int scholarId);
+	public List<Task> getTaskByScholarshipId(int scholarshipId);
+
+	public List<Task> getTaskByRequestId(int requestId);
 }

@@ -1,4 +1,4 @@
-package com.scholar.rest.dao;
+package com.scholar.rest.daoImpl;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.scholar.rest.dao.UserDao;
 import com.scholar.rest.model.User;
 
 public class UserDaoImpl implements UserDao {
@@ -40,7 +41,7 @@ public class UserDaoImpl implements UserDao {
 		User user = null;
 		session = sessionFactory.openSession();
 		Criteria criteria = session.createCriteria(User.class);
-		criteria.add(Restrictions.eq("id", userId));
+		criteria.add(Restrictions.eq("userId", userId));
 		if (criteria.list().size() != 0) {
 			user = (User) criteria.list().get(0);
 		}
@@ -51,13 +52,13 @@ public class UserDaoImpl implements UserDao {
 	public void updateUser(User user) throws Exception {
 		session = sessionFactory.openSession();
 		transaction = session.beginTransaction();
-		Query query = session.createQuery("from User where id = :userId ");
-		query.setParameter("userId", user.getId());
+		Query query = session.createQuery("from User where userId = :userId ");
+		query.setParameter("userId", user.getUserId());
 		User userToUpdate = (User) query.list().get(0);
-		if(!user.getFirstName().equals("")){
+		if (!user.getFirstName().equals("")) {
 			userToUpdate.setFirstName(user.getFirstName());
 		}
-		if(!user.getLastName().equals("")){
+		if (!user.getLastName().equals("")) {
 			userToUpdate.setLastName(user.getLastName());
 		}
 		session.update(userToUpdate);
@@ -67,8 +68,8 @@ public class UserDaoImpl implements UserDao {
 
 	public void deleteUser(int userId) throws Exception {
 		session = sessionFactory.openSession();
-		Object userTodelete = session.load(User.class, userId);
 		transaction = session.beginTransaction();
+		Object userTodelete = session.load(User.class, userId);
 		session.delete(userTodelete);
 		transaction.commit();
 		session.close();
