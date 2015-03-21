@@ -4,7 +4,7 @@
  */
 
 angular
-    .module('RDash')
+    .module('Scholar')
     .directive('rdLoading', rdLoading);
 
 function rdLoading() {

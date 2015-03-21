@@ -3,7 +3,7 @@
  */
 
 angular
-    .module('RDash')
+    .module('Scholar')
     .directive('rdWidgetHeader', rdWidgetTitle);
 
 function rdWidgetTitle() {
