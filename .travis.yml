@@ -1,3 +1,11 @@
 language: java
-before_install: cd scholar.backend/scholar
-script: mvn clean compile package
+before_install:
+  - npm install -g bower
+  - npm install -g gulp
+  -cd scholar.backend/scholar
+script: 
+  - mvn clean compile package
+  - cd ../../scholar.frontend
+  - npm install
+  - bower install
+  - gulp build
