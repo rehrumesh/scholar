@@ -1,1 +1,0 @@
-Scholar frontend project

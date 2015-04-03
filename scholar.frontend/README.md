@@ -1,10 +1,6 @@
-# RDash rdash-angular
-## Responsive, bloat free, bootstrap powered admin style dashboard!
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/rdash/rdash-angular?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# Scholar Front-end
 
-rdash-angular is an AngularJS implementation of the RDash admin dashboard. The dashboard uses a small number of modules to get you started, along with some handy directives and controllers to speed up development using the dashboard.
-
-Check out the live example!
+Scholar Front-end developed using [rdash-angular](https://github.com/rdash/rdash-angular) 
 
 ## Usage
 ### Requirements
@@ -13,7 +9,7 @@ Check out the live example!
 * [Gulp](http://gulpjs.com)
 
 ### Installation
-1. Clone the repository: `git clone https://github.com/rdash/rdash-angular.git`
+1. In the terminal, navigate to `scholar.frontend` directory
 2. Install the NodeJS dependencies: `sudo npm install`.
 3. Install the Bower dependencies: `bower install`.
 4. Run the gulp build task: `gulp build`.
@@ -25,12 +21,7 @@ Ensure your preferred web server points towards the `dist` directory.
 Continue developing the dashboard further by editing the `src` directory. With the `gulp` command, any file changes made will automatically be compiled into the specific location within the `dist` directory.
 
 #### Modules & Packages
-By default, rdash-angular includes [`ui.bootstrap`](http://angular-ui.github.io/bootstrap/), [`ui.router`](https://github.com/angular-ui/ui-router) and [`ngCookies`](https://docs.angularjs.org/api/ngCookies). 
+Scholar Front-end includes [`ui.bootstrap`](http://angular-ui.github.io/bootstrap/), [`ui.router`](https://github.com/angular-ui/ui-router) and [`ngCookies`](https://docs.angularjs.org/api/ngCookies). 
 
-If you'd like to include any additional modules/packages not included with rdash-angular, add them to your `bower.json` file and then update the `src/index.html` file, to include them in the minified distribution output.
+Any additional modules/packages not included with rdash-angular, add them to `bower.json` file and then update the `src/index.html` file, to include them in the minified distribution output.
 
-## Credits
-* [Elliot Hesp](https://github.com/Ehesp)
-* [Leonel Samayoa](https://github.com/lsamayoa)
-* [Mathew Goldsborough](https://github.com/mgoldsborough)
-* [Ricardo Pascua Jr](https://github.com/rdpascua)
